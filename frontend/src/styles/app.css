@@ -1,0 +1,43 @@
+body{
+    background-color: #49379C;
+}
+
+.menu-btn{
+    position: absolute;
+    top: 2%;
+    left: 5%;
+    background-color: #19171A;
+    border: none;
+}
+
+.menu-icon{
+    color: white;
+    font-size: 1.5em;
+}
+
+.menu-container{
+    min-height: 100vh;
+    width: 60%;
+    background-color: #182B34;
+    padding: 1.5em;
+    padding-top: 6.5em;
+    /* display: none; */
+    flex-direction: column;
+    row-gap: 1.5em;
+}
+
+.menu-item{
+    width: 100%;
+    align-items: center;
+    column-gap: 1em;
+    display: none;
+}
+.menu-item h4{
+    color: aliceblue;
+    font-size: 1.2em;
+    margin: 0;
+}
+
+.menu-visible{
+    display: flex;
+}
