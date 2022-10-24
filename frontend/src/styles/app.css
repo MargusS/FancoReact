@@ -2,6 +2,24 @@ body {
     background-color: #49379C;
 }
 
+.logo {
+    margin: 1em auto;
+    height: auto;
+    width: 65vw;
+}
+
+.logo img {
+    width: 100%;
+    height: auto;
+}
+
+.logo h5 {
+    margin-top: 1.5em;
+    color: #fff;
+    text-align: center;
+
+}
+
 .ant-drawer-body {
     background-color: #182B34;
     color: #fff;
@@ -21,4 +39,33 @@ body {
     margin: 1em 1.5em;
     background-color: #182B34;
     border: none;
+}
+
+.search-bar {
+    width: 100vw;
+    margin: 2em auto;
+}
+
+.earth-model {
+    margin: 1em auto;
+    width: 97.5vw;
+}
+
+.earth-model img {
+    width: 100%;
+}
+
+.footer {
+    position: fixed;
+    bottom: 2%;
+    left: 0%;
+    width: 100vw;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.footer h5 {
+    color: #fff;
+    margin: 0;
+    font-weight: normal;
 }
