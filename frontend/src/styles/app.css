@@ -4,6 +4,7 @@ body {
 }
 
 #root {
+    overflow: hidden;
     max-height: 100vh;
 }
 
@@ -24,6 +25,11 @@ body {
     text-align: center;
     font-size: 1.5vh;
 
+}
+
+.ant-drawer-content {
+    background: none;
+    border-radius: 0 1em 1em 0;
 }
 
 .ant-drawer-body {
@@ -105,7 +111,7 @@ p {
 
 .login-options {
     width: 100vw;
-    margin-top: 3em;
+    margin-top: 2em;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -115,4 +121,34 @@ p {
 
 .login-options-button {
     width: 15em;
+}
+
+.divider {
+    margin: 1em auto;
+    width: 80%;
+    border-top: 1px #bbb;
+    border-radius: 1px;
+}
+
+.login-form {
+    margin-top: 0;
+}
+
+.submit-btn {
+    width: 15.5em;
+    background-color: #182B34;
+    border: none;
+}
+
+.account {
+    position: absolute;
+    top: 3%;
+    right: 5%;
+    display: flex;
+    align-items: center;
+    column-gap: .5em;
+}
+
+.account p {
+    color: #fff;
 }
