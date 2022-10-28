@@ -1,5 +1,10 @@
 body {
     background-color: #49379C;
+    overflow: hidden;
+}
+
+#root {
+    max-height: 100vh;
 }
 
 .logo {
@@ -17,6 +22,7 @@ body {
     margin-top: 1.5em;
     color: #fff;
     text-align: center;
+    font-size: 1.5vh;
 
 }
 
@@ -24,11 +30,11 @@ body {
     background-color: #182B34;
     color: #fff;
     height: calc(100vh - 55px);
+    padding: 0;
 }
 
 .ant-drawer-header {
     background-color: #182B34;
-    /* border-radius: 0; */
 }
 
 .ant-drawer-title {
@@ -36,7 +42,11 @@ body {
 }
 
 .menu-btn {
-    margin: 1em 1.5em;
+    position: absolute;
+    top: 2%;
+    left: 3%;
+    min-width: 4em !important;
+    min-height: 3em;
     background-color: #182B34;
     border: none;
 }
@@ -48,15 +58,17 @@ body {
 
 .earth-model {
     margin: 1em auto;
-    width: 97.5vw;
+    overflow: hidden;
+    text-align: center;
 }
 
 .earth-model img {
-    width: 100%;
+    width: 100vw;
+    max-width: 60em;
 }
 
 .footer {
-    position: fixed;
+    position: absolute;
     bottom: 2%;
     left: 0%;
     width: 100vw;
@@ -68,4 +80,39 @@ body {
     color: #fff;
     margin: 0;
     font-weight: normal;
+}
+
+.container-top,
+.container-bottom {
+    height: 45%;
+    margin: 0;
+}
+
+.container-top {
+    margin-top: 10vh;
+}
+
+.item {
+    width: 100%;
+    display: flex;
+    column-gap: 1em;
+    padding: 1em 1.5em;
+}
+
+p {
+    margin: 0;
+}
+
+.login-options {
+    width: 100vw;
+    margin-top: 3em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: .5em;
+}
+
+.login-options-button {
+    width: 15em;
 }

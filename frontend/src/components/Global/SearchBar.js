@@ -1,4 +1,3 @@
-import { AudioOutlined } from '@ant-design/icons';
 import { Input, Space } from 'antd';
 import React from 'react';
 
@@ -9,7 +8,7 @@ export default function SearchBar() {
     return (
         <>
             <Space className='search-bar' direction="vertical" align='center'>
-                <Search placeholder="Search Country" onSearch={onSearch} style={{ width: 200 }} />
+                <Search placeholder="Search Country" onSearch={onSearch} style={{ width: 250 }} />
             </Space>
         </>
     )
