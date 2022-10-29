@@ -3,17 +3,23 @@ import React from "react";
 import HomeView from './components/Home/HomeView';
 import LoginView from './components/Login/LoginView';
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import LoggedView from './components/Logged/LoggedView';
+import { useState } from "react";
+import { LogContext } from "./context/LogContext";
+import Posts from './components/Posts/Posts';
 
 function App() {
+  const [value, setValue] = useState(false);
   return (
     <Router>
-      <Routes>
-        <Route path="/home" element={< HomeView />} />
-        <Route path="/login" element={< LoginView />} />
-        <Route path="/logged" element={< LoggedView />} />
-        <Route path="/" element={< HomeView />} />
-      </Routes>
+      <LogContext.Provider value={{ value, setValue }}>
+        <Routes>
+          <Route path="/home" element={< HomeView />} />
+          <Route path="/login" element={< LoginView />} />
+          <Route path="/posts/:country" element={< Posts />} />
+          <Route path="/" element={< HomeView />} />
+        </Routes>
+      </LogContext.Provider>
+
     </Router>
   );
 }

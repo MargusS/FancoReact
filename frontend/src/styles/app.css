@@ -152,3 +152,48 @@ p {
 .account p {
     color: #fff;
 }
+
+.header {
+    position: fixed;
+    width: 100vw;
+    height: 12vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1em;
+    /* background-color: white; */
+    border-radius: 0 0 1em 1em;
+}
+
+.logo-header {
+    width: 35vw;
+}
+
+.logo-header img {
+    width: 100%;
+}
+
+.header .menu-btn,
+.body .footer {
+    position: relative;
+    top: inherit;
+    left: inherit;
+}
+
+.body .footer {
+    margin: 1em 0;
+}
+
+.body .footer h5 {
+    color: #182B34;
+}
+
+.body {
+    margin-top: 12vh;
+    min-height: 88vh;
+    background-color: aliceblue;
+}
+
+.posts {
+    height: 20em;
+}

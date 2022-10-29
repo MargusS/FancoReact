@@ -3,10 +3,13 @@ import { GoogleOutlined, FacebookOutlined } from '@ant-design/icons';
 import { Button, Checkbox, Form, Input } from 'antd';
 import Footer from "../Global/Footer";
 import { useNavigate } from "react-router-dom";
+import { useContext } from "react";
+import { LogContext } from "../../context/LogContext";
 
 export default function LoginView() {
 
     const navigate = useNavigate();
+    const { value, setValue } = useContext(LogContext);
 
     const onFinish = (values) => {
         console.log('Success:', values);
@@ -16,14 +19,21 @@ export default function LoginView() {
         console.log('Failed:', errorInfo);
     };
 
+    const onLogin = () => {
+        setValue(() => !value)
+        navigate("/home")
+    }
+
     return (
         <>
             <SideMenu></SideMenu>
             <div className="container-top">
                 <div className="logo">
                     <img src="/Logo.png" alt="logo" />
+                    <p>{value}</p>
                 </div>
             </div>
+
             <div className="login-options">
                 <Button className="login-options-button" type="primary" danger size="large">Login with Google <GoogleOutlined /></Button>
                 <Button className="login-options-button" type="primary" size="large">Login with Facebook<FacebookOutlined /></Button>
@@ -41,9 +51,8 @@ export default function LoginView() {
                     <Form.Item name="remember" valuePropName="checked" wrapperCol={{ span: 16 }}>
                         <Checkbox>Remember me</Checkbox>
                     </Form.Item>
-
                     <Form.Item wrapperCol={{ offset: 1, span: 10 }}>
-                        <Button className="submit-btn" type="primary" htmlType="submit" size="large" onClick={() => navigate("/logged")}>
+                        <Button className="submit-btn" type="primary" htmlType="submit" size="large" onClick={onLogin}>
                             Submit
                         </Button>
                     </Form.Item>
