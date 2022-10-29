@@ -15,7 +15,21 @@ export default function Posts() {
         <LogoHeader></LogoHeader>
       </div>
       <div className="body">
-        <div className="posts"></div>
+        <div className="country">
+          <div className="country-shape">
+            <h4>Spain</h4>
+            <img src="/img/spain.png" />
+          </div>
+          <div className="country-info">
+            <SearchBar></SearchBar>
+            <h3>Capital: <span>Madrid</span></h3>
+            <h3>Language: <span>Spanish</span></h3>
+            <h3>Famous Places: <span>El Teide, El Prado</span></h3>
+          </div>
+        </div>
+        <div className="posts">
+
+        </div>
         <Footer></Footer>
       </div>
 

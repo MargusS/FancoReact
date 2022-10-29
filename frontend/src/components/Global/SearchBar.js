@@ -11,7 +11,7 @@ export default function SearchBar() {
     return (
         <>
             <Space className='search-bar' direction="vertical" align='center'>
-                <Search placeholder="Search Country" onSearch={onSearch} style={{ width: 250 }} />
+                <Search placeholder="Search Country" onSearch={onSearch} style={{ width: 200 }} />
             </Space>
         </>
     )
