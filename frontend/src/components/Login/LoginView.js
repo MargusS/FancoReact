@@ -25,7 +25,7 @@ export default function LoginView() {
     }
 
     return (
-        <>
+        <div className="overflow">
             <SideMenu></SideMenu>
             <div className="container-top">
                 <div className="logo">
@@ -59,6 +59,6 @@ export default function LoginView() {
                 </Form>
             </div>
             <Footer></Footer>
-        </>
+        </div>
     )
 }

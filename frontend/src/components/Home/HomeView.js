@@ -8,7 +8,7 @@ import { LogContext } from "../../context/LogContext";
 export default function HomeView() {
     const { value, setValue } = useContext(LogContext);
     return (
-        <>
+        <div className="overflow">
             <SideMenu></SideMenu>
             {value ? <Logged></Logged> : ""}
             <div className="container-top">
@@ -25,6 +25,6 @@ export default function HomeView() {
                 </div>
                 <Footer></Footer>
             </div>
-        </>
+        </div>
     )
 }

@@ -36,10 +36,6 @@ export default function SideMenu() {
                     < HomeOutlined style={{ fontSize: '1.7em', color: '#FFF' }} />
                     <p>HOME</p>
                 </div>
-                <div className='item' >
-                    <FormOutlined style={{ fontSize: '1.7em', color: '#FFF' }} />
-                    <p>CONTACT US</p>
-                </div>
                 {value ?
                     <div className='item' onClick={onLogout}>
                         <PoweroffOutlined style={{ fontSize: '1.7em', color: '#FFF' }} />

@@ -1,10 +1,12 @@
 body {
     background-color: #49379C;
-    overflow: hidden;
+}
+
+div {
+    display: block;
 }
 
 #root {
-    overflow: hidden;
     max-height: 100vh;
 }
 
@@ -58,12 +60,12 @@ body {
 }
 
 .search-bar {
-    width: 100vw;
+    width: 100%;
     margin: 2em auto;
 }
 
 .earth-model {
-    margin: 1em auto;
+    margin: 0em auto;
     overflow: hidden;
     text-align: center;
 }
@@ -160,6 +162,9 @@ h5 {
 
 .header {
     position: fixed;
+    z-index: 1;
+    background-color: #49379C;
+    top: 0;
     width: 100vw;
     height: 10.5vh;
     display: flex;
@@ -186,6 +191,7 @@ h5 {
 
 .body .footer {
     margin: 1em 0;
+    width: 100%;
 }
 
 .body .footer h5 {
@@ -201,7 +207,7 @@ h5 {
 }
 
 .country {
-    width: 100vw;
+    width: 100%;
     display: flex;
     column-gap: 1em;
 }
@@ -219,17 +225,118 @@ h5 {
 }
 
 .country-info {
+    width: 75%;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
 }
 
 .country-info .search-bar {
-    width: 100%;
     margin: 0 !important;
     margin-bottom: .5em !important;
 }
 
-.posts {
-    height: 20em;
+.country-info .search-bar .ant-space-item {
+    width: 100%;
+}
+
+.info {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.info h3 {
+    font-size: 1em;
+}
+
+.post-container {
+    width: 100%;
+    margin: 1em auto;
+    padding: 1em;
+    border-radius: 1em;
+    background-color: #182B34;
+    display: flex;
+    flex-direction: column;
+    row-gap: 1em;
+}
+
+.post {
+    width: 100%;
+    display: flex;
+    column-gap: .75em;
+    align-items: center;
+}
+
+.post-logo {
+    width: 25%;
+}
+
+.post-logo img {
+    width: 100%;
+}
+
+.post-content {
+    width: 75%;
+}
+
+.post-content h2,
+.post-content h4 {
+    line-height: 1;
+    color: #fff;
+}
+
+.post-content p {
+    color: #fff;
+    margin-top: .5em;
+    word-wrap: break-word;
+    line-height: 1.2;
+}
+
+.post-options {
+    display: flex;
+    padding: 0 1em;
+    justify-content: space-between;
+}
+
+.user-post {
+    display: flex;
+    align-items: center;
+    column-gap: .5em;
+}
+
+.user-post p {
+    color: #fff;
+}
+
+.options-btn {
+    display: flex;
+    align-items: center;
+}
+
+.options-btn p {
+    color: #fff;
+}
+
+.ant-btn {
+    padding: 0 .5em;
+}
+
+.body .account {
+    position: relative;
+    top: inherit;
+    right: inherit;
+}
+
+.body .account p {
+    color: #182B34;
+}
+
+h3 span {
+    font-weight: 400;
+}
+
+.overflow {
+    overflow: hidden;
 }
