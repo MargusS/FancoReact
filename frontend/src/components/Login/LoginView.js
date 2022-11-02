@@ -13,16 +13,18 @@ export default function LoginView() {
 
     const onFinish = (values) => {
         console.log('Success:', values);
+        setValue(() => !value)
+        navigate("/home")
     };
 
     const onFinishFailed = (errorInfo) => {
         console.log('Failed:', errorInfo);
     };
 
-    const onLogin = () => {
-        setValue(() => !value)
-        navigate("/home")
-    }
+    // const onLogin = () => {
+    //     setValue(() => !value)
+    //     navigate("/home")
+    // }
 
     return (
         <div className="overflow">
@@ -52,7 +54,7 @@ export default function LoginView() {
                         <Checkbox>Remember me</Checkbox>
                     </Form.Item>
                     <Form.Item wrapperCol={{ offset: 1, span: 10 }}>
-                        <Button className="submit-btn" type="primary" htmlType="submit" size="large" onClick={onLogin}>
+                        <Button className="submit-btn" type="primary" htmlType="submit" size="large">
                             Submit
                         </Button>
                     </Form.Item>

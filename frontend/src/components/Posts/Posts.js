@@ -17,7 +17,7 @@ export default function Posts() {
 
   useEffect(() => {
     getData()
-  }, [])
+  })
 
   const getData = () => {
     fetch('/countries.json'

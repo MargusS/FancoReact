@@ -6,7 +6,7 @@ export default function SearchBar() {
     const { Search } = Input;
     const navigate = useNavigate();
     const onSearch = (value) => {
-        navigate(`/posts/${value}`)
+        value === "" ? navigate(`/home`) : navigate(`/posts/${value}`);
     };
     return (
         <>
