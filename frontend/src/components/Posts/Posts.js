@@ -17,7 +17,7 @@ export default function Posts() {
 
   useEffect(() => {
     getData()
-  })
+  }, [country])
 
   const getData = () => {
     fetch('/countries.json'
@@ -33,7 +33,6 @@ export default function Posts() {
       })
       .then(function (myJson) {
         setInfo(myJson[`${country}`])
-        console.log(info.posts.map(e => e.id))
       });
   }
 
