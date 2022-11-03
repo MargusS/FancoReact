@@ -27,3 +27,10 @@ npm start
 
 To get an idea of the main functionality, you can search in the home page the following countries, **Spain** and **United States**.
 You will see an example of different posts about each country.
+
+## Built With
+
+* [Visual StudioCode](https://code.visualstudio.com/) - The Editor used in this project.
+* [React](https://es.reactjs.org/) - A JavaScript library for building user interfaces
+* [Ant Design](https://ant.design/) - A design system for enterprise-level products. Create an efficient and enjoyable work experience.
+* [SASS](https://sass-lang.com/) - an extension of CSS that enables you to use things like variables, nested rules, inline imports and more.
