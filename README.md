@@ -2,7 +2,7 @@
 
 Fanco is a concept of a social media oriented to travellers, where you are able to find "Fun Facts" about different countries, cities or places, written in posts by the users.
 
-**This project has been develop in mobile version only.**
+**This project has been developed in mobile version only.**
 
 ###### If you want to try it follow the following steps:
 
