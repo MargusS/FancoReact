@@ -2,7 +2,7 @@
 
 Fanco is a concept of a social media oriented to travellers, where you are able to find "Fun Facts" about different countries, cities or places, written in posts by the users.
 
-** This project has been develop in mobile version only. **
+**This project has been develop in mobile version only.**
 
 ###### If you want try it follow the text steps:
 
@@ -25,5 +25,5 @@ npm start
 ```
 ###### Use Example
 
-To get an idea of the main functionality, you can search in the home page the following countries, *Spain** and **United States**.
+To get an idea of the main functionality, you can search in the home page the following countries, **Spain** and **United States**.
 You will see an example of different posts about each country.
