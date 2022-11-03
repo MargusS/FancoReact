@@ -4,7 +4,7 @@ Fanco is a concept of a social media oriented to travellers, where you are able 
 
 **This project has been develop in mobile version only.**
 
-###### If you want try it follow the text steps:
+###### If you want to try it follow the following steps:
 
 1. - Clone the repository 
 
