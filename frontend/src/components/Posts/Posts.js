@@ -29,9 +29,11 @@ export default function Posts() {
       }
     )
       .then(function (response) {
+        console.log(response)
         return response.json();
       })
       .then(function (myJson) {
+        console.log(myJson)
         setInfo(myJson[`${country}`])
       });
   }
@@ -67,7 +69,7 @@ export default function Posts() {
           typeof info.id !== 'undefined' ?
             <div className='posts-list'>
               {info.posts.map(post =>
-                <div className="post-container">
+                <div key={post.id} className="post-container">
 
                   <div className="post">
                     <div className="post-logo">
@@ -84,11 +86,11 @@ export default function Posts() {
                       <SmileOutlined style={{ fontSize: '1.7em', color: '#b2fcfb' }} />
                       <p>User</p>
                     </div>
-                    <div className='options-btn'>
+                    {/* <div className='options-btn'>
                       <p>20</p>
                       <Button type="text"><HeartOutlined size="small" style={{ fontSize: '1.7em', color: '#57369a' }} /></Button>
                       <Button type="text"><ShareAltOutlined size="small" style={{ fontSize: '1.7em', color: '#fff' }} /></Button>
-                    </div>
+                    </div> */}
                   </div>
                 </div>
 

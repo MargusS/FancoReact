@@ -1,8 +1,9 @@
-import { CloseOutlined, AlignLeftOutlined, HomeOutlined, UserOutlined, FormOutlined, PoweroffOutlined } from '@ant-design/icons';
+import { CloseOutlined, AlignLeftOutlined, HomeOutlined, UserOutlined, PlusOutlined, FormOutlined, PoweroffOutlined } from '@ant-design/icons';
 import { Button, Drawer } from 'antd';
 import React, { useState, useContext } from 'react';
 import { useNavigate } from "react-router-dom";
 import { LogContext } from "../../context/LogContext";
+
 
 export default function SideMenu() {
 
@@ -37,10 +38,16 @@ export default function SideMenu() {
                     <p>HOME</p>
                 </div>
                 {value ?
-                    <div className='item' onClick={onLogout}>
-                        <PoweroffOutlined style={{ fontSize: '1.7em', color: '#FFF' }} />
-                        <p>LOG OUT</p>
-                    </div> :
+                    <>
+                        <div className='item' onClick={() => onNavigation("/newPost")}>
+                            <PlusOutlined style={{ fontSize: '1.7em', color: '#FFF' }} />
+                            <p>NEW POST</p>
+                        </div>
+                        <div className='item' onClick={onLogout}>
+                            <PoweroffOutlined style={{ fontSize: '1.7em', color: '#FFF' }} />
+                            <p>LOG OUT</p>
+                        </div>
+                    </> :
                     <div className='item' onClick={() => onNavigation("/login")}>
                         <UserOutlined style={{ fontSize: '1.7em', color: '#FFF' }} />
                         <p>SIGN IN/LOG IN</p>

@@ -5,6 +5,7 @@ import Footer from "../Global/Footer";
 import { useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { LogContext } from "../../context/LogContext";
+import { userLog } from "../Global/UserLog.js";
 
 export default function LoginView() {
 
@@ -13,6 +14,7 @@ export default function LoginView() {
 
     const onFinish = (values) => {
         console.log('Success:', values);
+        userLog.username = values.username;
         setValue(() => !value)
         navigate("/home")
     };
@@ -21,25 +23,19 @@ export default function LoginView() {
         console.log('Failed:', errorInfo);
     };
 
-    // const onLogin = () => {
-    //     setValue(() => !value)
-    //     navigate("/home")
-    // }
-
     return (
         <div className="overflow">
             <SideMenu></SideMenu>
             <div className="container-top">
                 <div className="logo">
                     <img src="/Logo.png" alt="logo" />
-                    <p>{value}</p>
                 </div>
             </div>
 
-            <div className="login-options">
+            {/* <div className="login-options">
                 <Button className="login-options-button" type="primary" danger size="large">Login with Google <GoogleOutlined /></Button>
                 <Button className="login-options-button" type="primary" size="large">Login with Facebook<FacebookOutlined /></Button>
-            </div>
+            </div> */}
             <hr className="divider"></hr>
             <div className="login-options login-form">
                 <Form name="basic" labelCol={{ span: 8 }} wrapperCol={{ span: 16 }} initialValues={{ remember: true }} onFinish={onFinish} onFinishFailed={onFinishFailed} autoComplete="off">
