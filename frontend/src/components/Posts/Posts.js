@@ -8,7 +8,8 @@ import Logged from "../Global/Logged";
 import { useContext } from "react";
 import { LogContext } from "../../context/LogContext";
 import LogoHeader from "../Global/LogoHeader";
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
+import { userLog } from "../Global/UserLog.js";
 
 export default function Posts() {
   const { value, setValue } = useContext(LogContext);
@@ -29,17 +30,43 @@ export default function Posts() {
       }
     )
       .then(function (response) {
-        console.log(response)
         return response.json();
       })
       .then(function (myJson) {
-        console.log(myJson)
         setInfo(myJson[`${country}`])
       });
   }
 
+  const ws = useRef();
+
+  useEffect(() => {
+    const SERVER_URL = `${process.env.REACT_APP_SERVER_URL}`
+    ws.current = new WebSocket(SERVER_URL);
+
+    ws.current.onopen = () => {
+      console.log("Connection opened");
+    };
+
+    ws.current.onmessage = (event) => {
+      const data = JSON.parse(event.data);
+      const newId = info.posts.length + 1
+      data.newPosts.id = newId;
+
+      setInfo({
+        ...info,
+        posts: [...info.posts, data.newPosts]
+      })
+    };
+
+    return () => {
+      console.log("Cleaning up...");
+      ws.current.close();
+    };
+  }, []);
+
   return (
     <>
+      {/* {console.log(info)} */}
       <div className="header">
         <SideMenu></SideMenu>
         <LogoHeader></LogoHeader>

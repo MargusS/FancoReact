@@ -1,13 +1,13 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import SideMenu from "../Global/SideMenu";
 import { userLog } from "../Global/UserLog";
 import { Button, Checkbox, Form, Input, Select } from 'antd';
 const { TextArea } = Input;
-
-export default function NewPosts() {
+export default function NewPosts(user) {
 
     const navigate = useNavigate();
+    const [country, setCountry] = useState("");
     const [newPosts, setNewPost] = useState({
         "id": 0,
         "title": "",
@@ -16,8 +16,41 @@ export default function NewPosts() {
         "likes": 0
     })
 
+    const ws = useRef();
+    useEffect(() => {
+        const SERVER_URL = `${process.env.REACT_APP_SERVER_URL}/?username=${userLog.username}`
+        ws.current = new WebSocket(SERVER_URL);
+
+        ws.current.onopen = () => {
+            console.log("Connection opened");
+        };
+
+        ws.current.onmessage = (event) => {
+            console.log("Post Created!")
+        };
+
+        return () => {
+            console.log("Cleaning up...");
+            ws.current.close();
+        };
+    }, []);
+
+    useEffect(() => {
+        if (newPosts.title) {
+            sendMessage();
+        }
+    }, [newPosts])
+
+    const sendMessage = () => {
+        ws.current.send(
+            JSON.stringify({
+                country: country,
+                newPosts
+            })
+        )
+    }
+
     const onFinish = (values) => {
-        // console.log(values)
         setNewPost({
             ...newPosts,
             title: values.title,
@@ -31,7 +64,6 @@ export default function NewPosts() {
 
     return (
         <>
-            {console.log(newPosts)}
             <SideMenu></SideMenu>
             <div className="container-top">
                 <div className="logo">
@@ -44,6 +76,7 @@ export default function NewPosts() {
                         <Select
                             defaultValue="Country"
                             style={{ width: "100%" }}
+                            onSelect={value => setCountry(value)}
                             options={[
                                 {
                                     value: 'Country',
