@@ -28,6 +28,10 @@ npm start
 To get an idea of the main functionality, you can search in the home page the following countries, **Spain** and **United States**.
 You will see an example of different posts about each country.
 
+###### PROCESSES, THREADS, SOCKETS AND WEBSOCKETS PRESENTATION
+
+https://docs.google.com/presentation/d/1eWqGcaAfr3rOSmxhDVna2SKPQF1Xm0ux/edit?usp=share_link&ouid=114556294167318755233&rtpof=true&sd=true
+
 ## Built With
 
 * [Visual StudioCode](https://code.visualstudio.com/) - The Editor used in this project.
