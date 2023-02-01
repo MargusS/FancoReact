@@ -4,11 +4,11 @@ import SideMenu from "../Global/SideMenu";
 import { userLog } from "../Global/UserLog";
 import { Button, Checkbox, Form, Input, Select } from 'antd';
 const { TextArea } = Input;
-export default function NewPosts(user) {
+export default function NewPost(user) {
 
     const navigate = useNavigate();
     const [country, setCountry] = useState("");
-    const [newPosts, setNewPost] = useState({
+    const [newPost, setNewPost] = useState({
         "id": 0,
         "title": "",
         "body": "",
@@ -36,27 +36,33 @@ export default function NewPosts(user) {
     }, []);
 
     useEffect(() => {
-        if (newPosts.title) {
+        if (newPost.title) {
             sendMessage();
         }
-    }, [newPosts])
+    }, [newPost])
 
     const sendMessage = () => {
         ws.current.send(
             JSON.stringify({
                 country: country,
-                newPosts
+                newPost
             })
         )
     }
 
     const onFinish = (values) => {
         setNewPost({
-            ...newPosts,
+            ...newPost,
             title: values.title,
             body: values.content
         })
     };
+
+    useEffect(() => {
+        if (newPost.body) {
+            navigate(`/posts/${country}`)
+        }
+    }, [newPost])
 
     const onFinishFailed = (errorInfo) => {
         console.log('Failed:', errorInfo);

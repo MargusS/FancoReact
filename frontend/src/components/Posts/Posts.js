@@ -18,7 +18,7 @@ export default function Posts() {
 
   useEffect(() => {
     getData()
-  }, [country])
+  }, [])
 
   const getData = () => {
     fetch('/countries.json'
@@ -35,6 +35,7 @@ export default function Posts() {
       .then(function (myJson) {
         setInfo(myJson[`${country}`])
       });
+
   }
 
   const ws = useRef();
@@ -48,13 +49,18 @@ export default function Posts() {
     };
 
     ws.current.onmessage = (event) => {
+      console.log(info);
       const data = JSON.parse(event.data);
-      const newId = info.posts.length + 1
-      data.newPosts.id = newId;
+      console.log(data)
+      console.log(info['posts'].length)
+      const newId = info['posts'].length + 1
+      console.log(newId)
+      data.newPost.id = newId;
+      console.log(data.newPost);
 
       setInfo({
         ...info,
-        posts: [...info.posts, data.newPosts]
+        posts: [...info.posts, data.newPost]
       })
     };
 
@@ -62,7 +68,7 @@ export default function Posts() {
       console.log("Cleaning up...");
       ws.current.close();
     };
-  }, []);
+  }, [info]);
 
   return (
     <>
